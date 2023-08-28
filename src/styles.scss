@@ -1,0 +1,163 @@
+$prussian-blue: #0e3b58d9;
+$indigo-dye: #d1d2d3;
+$pumpkin: #f19719da;
+$antiflash-red: #34b5b6;
+$white: #ffffffff;
+$menu: rgb(86, 93, 133);
+
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #34b5b6 #ffffff;
+}
+
+*::-webkit-scrollbar {
+    width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #34b5b6;
+    border-radius: 10px;
+    border: 1px none #ffffff;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mr-16 {
+    margin-right: 1rem;
+}
+
+.mb-16 {
+    margin-bottom: 1rem;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.width-50 {
+    width: 50%;
+}
+
+.d-flex-ac-jcsb-w100 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.mt-32 {
+    margin-top: 32px;
+}
+
+.mt-16 {
+    margin-top: 16px;
+}
+
+.dialog-container {
+    position: relative;
+}
+
+.success-dialog {
+    position: absolute;
+    right: 50%;
+    top: 30%;
+    transform: translate(50%);
+    background-color: #424242;
+    padding: 100px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 15px;
+    color: green;
+}
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    tr {
+        border-bottom: 1px solid $antiflash-red;
+        cursor: pointer;
+
+        &:last-child {
+            border-bottom: 0;
+        }
+
+        &:first-child {
+            cursor: default;
+            &:hover {
+                background-color: unset;
+            }
+        }
+
+        td {
+            height: 48px;
+            color: $indigo-dye;
+            @media (max-width: 600px) {
+                font-size: 0.75rem;
+            }
+        }
+
+        &:hover {
+            background-color: rgba($color: #000000, $alpha: 0.08);
+        }
+    }
+
+    th {
+        color: $antiflash-red;
+        font-weight: 500;
+        text-align: start;
+    }
+}
+
+mat-menu,
+mat-card {
+    background-color: $prussian-blue !important;
+}
+
+.mdc-dialog__content>:first-child {
+    padding-top: 0.5rem;
+}
+
+.mdc-menu-surface {
+    background-color: $menu !important;
+    color: var(--mdc-theme-on-surface, #fff);
+}
+
+.dialog-container {
+    background-color: $prussian-blue !important;
+    color: var(--mdc-theme-on-surface, #fff);
+}
+
+.pin-right-upper-corner {
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+    color: $indigo-dye;
+}
+
+.action-container {
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+        margin-left: 10px;
+    }
+}

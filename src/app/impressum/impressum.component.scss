@@ -1,0 +1,76 @@
+@import './../../styles.scss';
+
+.legal-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 2rem;
+    height: calc(100% - 2rem) ;
+    background-color: $prussian-blue;
+    border-radius: 5px;
+}
+.logo-container{
+    align-self: flex-start;
+    .legal-container-logo{
+        width: 12rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.headline{
+    display: flex;
+    align-items: flex-start;
+    gap: 6.5rem;
+    h1{
+        color: $antiflash-red;
+        font-size: 3.5rem;
+        font-weight: 500;
+        margin-bottom: 5rem;
+        margin-top: 2.5rem;
+        @media (max-width: 600px) {
+            font-size: 2.3rem;
+        }
+        @media (max-width: 420px) {
+            font-size: 1.7rem;
+        }
+    }
+    button {
+        margin-top: 2.3rem;
+        color: $indigo-dye;
+    }
+}
+
+h2{
+    color: $antiflash-red;
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    @media (max-width: 600px) {
+        font-size: 1.2rem;
+    }
+    @media (max-width: 420px) {
+        font-size: 1rem;
+    }
+}
+
+p{
+    color: $indigo-dye;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+
+    @media (max-width: 600px) {
+        font-size: 0.85rem;
+    }
+    @media (max-width: 420px) {
+        font-size: 0.75rem;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: $antiflash-red;
+    &:hover {
+        color: $white;
+    }
+}

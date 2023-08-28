@@ -1,0 +1,33 @@
+@import '../../styles.scss';
+
+a {
+    color: $indigo-dye;
+    text-decoration: none;
+    &:hover {
+        color: $white;
+    }
+}
+
+mat-card-header {
+    margin-bottom: 1rem;
+    h2 {
+        color: $antiflash-red;
+        font-size: 2.5rem;
+    }
+}
+
+h3 {
+    color: $antiflash-red;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    color: $indigo-dye;
+    font-size: 1rem;
+}
+
+.pin-right-upper-corner{
+    right: 0;
+    top: 0;
+}

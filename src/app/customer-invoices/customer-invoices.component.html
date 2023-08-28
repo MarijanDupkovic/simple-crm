@@ -1,0 +1,27 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            <app-back-button></app-back-button>
+        </mat-card-title>
+        <mat-card-title>
+            Invoices from {{ user.company}}
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <table>
+            <tr>
+                <th>Invoice-Number</th>
+                <th>Invoice-Price</th>
+                <th>Invoice-Date</th>
+                <th>Download PDF</th>
+            </tr>
+            <tr *ngFor="let invoice of user['invoices']">
+                <td> 000{{ invoice.invoiceNumber }} </td>
+                <td>{{ invoice.price }} €</td>
+                <td>{{ invoice.date }}</td>
+                <td> <mat-icon (click)="getInvoicePDF(invoice.invoiceNumber)" class="click">picture_as_pdf</mat-icon>
+                </td>
+            </tr>
+        </table>
+    </mat-card-content>
+</mat-card>

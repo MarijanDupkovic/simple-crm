@@ -1,0 +1,73 @@
+<mat-card class="user-detail-header">
+    <button mat-icon-button [matMenuTriggerFor]="usermenu" class="pin-right-upper-corner">
+        <mat-menu #usermenu="matMenu">
+            <button mat-menu-item (click)="editUserDetail()">Edit</button>
+            <button mat-menu-item (click)="deleteUser()">Delete User</button>
+            <button mat-menu-item (click)="getDSGVOCustomerData()">Get DSGVO-Data-PDF</button>
+        </mat-menu>
+        <mat-icon fontIcon="more_vert"></mat-icon>
+    </button>
+    <mat-card-header>
+        <mat-card-title>
+            <app-back-button></app-back-button>
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="user-details">
+            <h2>{{ user.company }}</h2>
+            <span> <a href="mailto:{{ user.email }}"> {{ user.email }} </a></span>
+        </div>
+    </mat-card-content>
+</mat-card>
+
+<mat-card class="mt-16">
+    <button mat-icon-button [matMenuTriggerFor]="addressmenu" class="pin-right-upper-corner">
+        <mat-menu #addressmenu="matMenu">
+            <button mat-menu-item (click)="editMenu()">Edit</button>
+        </mat-menu>
+        <mat-icon fontIcon="more_vert"></mat-icon>
+    </button>
+    <mat-card-header>
+        <mat-card-title>
+            Address
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        {{ user.street }} <br>
+        {{ user.zipCode }} {{ user.city }}
+    </mat-card-content>
+</mat-card>
+
+<mat-card class="mt-16">
+    <button mat-icon-button [matMenuTriggerFor]="noticemenu" class="pin-right-upper-corner">
+        <mat-menu #noticemenu="matMenu" style="background-color: #0e3b58d9 !important;">
+            <button mat-menu-item (click)="showNotice()">Show notices</button>
+            <button mat-menu-item (click)="addNoticeDialog()">Add notice</button>
+        </mat-menu>
+        <mat-icon fontIcon="more_vert"></mat-icon>
+    </button>
+    <mat-card-header>
+        <mat-card-title>
+            Notice
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+
+    </mat-card-content>
+</mat-card>
+
+<mat-card class="mt-16">
+
+    <mat-card-header>
+        <div class="d-flex-ac-jcsb-w100">
+            <h2 class="customer-invoice-title">
+                Invoices
+            </h2>
+            <mat-icon class="pointer customer-invoice-btn" fontIcon="launch"
+                [routerLink]="['/site/' + this.site.test + '/customer/' + userId + '/invoices']"></mat-icon>
+        </div>
+    </mat-card-header>
+    <mat-card-content>
+        
+    </mat-card-content>
+</mat-card>

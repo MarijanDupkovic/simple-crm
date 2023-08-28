@@ -1,0 +1,10 @@
+@import './../../styles.scss';
+
+mat-icon {
+    cursor: pointer;
+    color: $indigo-dye;
+
+    &:hover {
+        color: #FFFFFF;
+    }
+}

@@ -1,0 +1,25 @@
+<mat-card>
+    <button mat-icon-button [matMenuTriggerFor]="allnoticemenu" class="pin-right-upper-corner">
+        <mat-menu #allnoticemenu="matMenu">
+            <button mat-menu-item (click)="addNoticeDialog()">New notice</button>
+        </mat-menu>
+        <mat-icon fontIcon="more_vert"></mat-icon>
+    </button>
+    <mat-card-header>
+        <mat-card-title>
+            Notices
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <table class="user-table">
+            <tr>
+                <th>Notice</th>
+                <th>Date of notice</th>
+            </tr>
+            <tr *ngFor="let notice of user.notices;">
+                <td>{{ notice.notice }} </td>
+                <td>{{notice.date }} </td>
+            </tr>
+        </table>
+    </mat-card-content>
+</mat-card>

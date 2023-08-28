@@ -1,0 +1,49 @@
+@import './../../styles.scss';
+
+mat-card {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.add-user-button {
+    position: absolute;
+    right: 75px;
+    bottom: 75px;
+    background-color: $antiflash-red;
+}
+
+.mat-mdc-card {
+    background-color: $prussian-blue;
+    color: $white;
+}
+
+mat-icon {
+    &:hover {
+        color: $white;
+    }
+}
+
+.user-table {
+    margin-top: 1rem;
+
+    th {
+        font-size: 0.95rem;
+        font-weight: 500;
+    
+        &:last-child {
+            text-align: end !important;
+        }
+    
+        span {
+            margin-right: 30px;
+        }
+    }
+    
+    td {
+        text-align: left;
+    
+        &:last-child {
+            text-align: end;
+        }
+    }
+}

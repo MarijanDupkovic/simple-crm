@@ -1,0 +1,51 @@
+@import './../../styles.scss';
+
+.pin-right-upper-corner {
+    right: 20px;
+    top: 20px;
+}
+
+.user-table {
+    color: #FFFFFF;
+    max-width: 900px;
+    min-width: 500px;
+
+    @media (max-width: 700px) {
+        max-width: 300px;
+        min-width: 200px;
+    }
+
+    th {
+
+        &:last-child {
+            text-align: end;
+        }
+
+        span {
+            margin-right: 30px;
+        }
+    }
+
+    td {
+        text-align: left;
+
+        &:last-child {
+            text-align: end;
+        }
+    }
+}
+
+mat-card {
+    background-color: $prussian-blue;
+    padding: 16px;
+    color: #FFFFFF;
+
+    mat-card-header {
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    @media (max-width: 600px) {
+        padding: 0;
+    }
+}

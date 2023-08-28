@@ -1,0 +1,21 @@
+<mat-card>
+    <button mat-icon-button [matMenuTriggerFor]="usermenu" class="pin-right-upper-corner">
+        <mat-menu #usermenu="matMenu">
+            <button mat-menu-item (click)="editMenu()">Edit</button>
+        </mat-menu>
+        <mat-icon fontIcon="more_vert"></mat-icon>
+    </button>
+    <mat-card-header>
+        <mat-card-title>
+            <h2>{{ user.firstName }} {{ user.lastName }}</h2>
+        </mat-card-title>
+        <mat-card-subtitle> <a href="mailto:{{ user.email }}"> {{ user.email }} </a> </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <div>
+            <h3>Address</h3>
+            <p> {{ user.street }} <br>
+                {{ user.zipCode }} {{ user.city }}</p>
+        </div>
+    </mat-card-content>
+</mat-card>

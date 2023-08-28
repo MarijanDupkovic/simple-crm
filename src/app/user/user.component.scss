@@ -1,0 +1,39 @@
+@import './../../styles.scss';
+.mat-mdc-card {
+    background-color: $prussian-blue;
+    color: $white;
+}
+
+.add-user-button{
+    position: absolute;
+    right: 75px;
+    bottom: 75px;
+    background-color: $antiflash-red;
+}
+
+a {
+    color: $indigo-dye;
+    text-decoration: none;
+    mat-icon {
+        &:hover {
+            color: $white;
+        }
+    }
+}
+
+th {
+    &:last-child {
+        text-align: end !important;
+    }
+
+    span {
+        margin-right: 30px;
+    }
+}
+
+td {
+    text-align: left;
+    &:last-child {
+        text-align: end;
+    }
+}

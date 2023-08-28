@@ -1,0 +1,33 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            <app-back-button></app-back-button>
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form [formGroup]="contactForm" class="form-alpha-container" (ngSubmit)="sendNewsletter()" method="POST">
+            <div class="form-container full-width">
+                <mat-form-field appearance="outline" color="accent">
+                    <mat-label>Subject</mat-label>
+                    <input matInput class="inputfield" id="inputMail" placeholder="Subject" formControlName="subject">
+                </mat-form-field>
+
+
+                <mat-form-field appearance="outline" color="accent">
+                    <mat-label>Mailtext</mat-label>
+
+                    <textarea matInput class="inputs" id="inputMessage" cols="30" rows="10" placeholder="Your message"
+                        formControlName="message"></textarea>
+
+                </mat-form-field>
+
+
+                <button mat-button class="newsl-btn" [disabled]="!contactForm.valid || sending" type="submit">Send
+                    message :)</button>
+
+
+            </div>
+
+        </form>
+    </mat-card-content>
+</mat-card>

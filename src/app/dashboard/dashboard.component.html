@@ -1,0 +1,14 @@
+<div style="text-align:center" class="dashboard" *ngIf="activated">
+    <highcharts-chart class="chart-sales"  [Highcharts]="Highcharts" [options]="chartOptions_sales">
+    </highcharts-chart>
+    <highcharts-chart class="chart-sales" [Highcharts]="Highcharts" [options]="chartOptions_customer">
+    </highcharts-chart>
+    <highcharts-chart class="chart-sales" [Highcharts]="Highcharts" [options]="chartOptions_salespercustomer">
+    </highcharts-chart>
+    <div class="newsletter-container">
+        <h2>Last Newsletter</h2>
+        <p>{{lastNewsletterSend.date}}</p>
+        <p>{{lastNewsletterSend['subject']}}</p>
+        <p id="messageI"></p>
+    </div>
+</div>

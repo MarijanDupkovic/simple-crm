@@ -1,0 +1,27 @@
+<div class="dialog-container">
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+    <h1 mat-dialog-title>Edit Customer's name and Email</h1>
+    <form [formGroup]="editCustomerNameAndMail">
+        <div mat-dialog-content>
+            <div>
+                <mat-form-field appearance="outline" color="accent" class="full-width" style="min-width: 320px;">
+                    <mat-label>Company</mat-label>
+                    <input [disabled]="loading" formControlName="company" matInput placeholder="Company">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" color="accent" class="full-width">
+                    <mat-label>Email</mat-label>
+                    <input [disabled]="loading" formControlName="email" matInput placeholder="Email">
+                    <mat-hint *ngIf="alert">
+                        <span >Email or password incorrect</span>
+                    </mat-hint>
+                </mat-form-field>
+            </div>
+        </div>
+        <div mat-dialog-actions class="action-container">
+            <button [disabled]="loading" mat-button (click)="dialogRef.close()">Cancel</button>
+            <button [disabled]="loading" (click)="saveUser()" mat-button cdkFocusInitial>Save</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,25 @@
+<mat-nav-list>
+
+    <div class="menu-items">
+        <mat-nav-item routerLink="/site/{{test}}/dashboard" routerLinkActive="active"><mat-icon
+                fontIcon="dashboard"></mat-icon>Dashboard</mat-nav-item>
+        <mat-nav-item routerLink="/site/{{test}}/customer" routerLinkActive="active"> <mat-icon
+                fontIcon="contacts"></mat-icon>Customer</mat-nav-item>
+        <mat-nav-item routerLink="/site/{{test}}/invoice" routerLinkActive="active"> <mat-icon
+                fontIcon="receipt"></mat-icon>New
+            Invoice</mat-nav-item>
+        <mat-nav-item routerLink="/site/{{test}}/newsletter" routerLinkActive="active"> <mat-icon
+                fontIcon="alternate_email"></mat-icon>Newsletter</mat-nav-item>
+    </div>
+    <div class="menu-items">
+        <mat-nav-item routerLink="/site/{{test}}/user" *ngIf="test == 'BTDgZYSnadVxAQW5H5JqRYVV7Qk1'"
+            routerLinkActive="active"><mat-icon fontIcon="perm_identity"></mat-icon>Users</mat-nav-item>
+        <mat-nav-item routerLink="/site/{{test}}/legal-notice" routerLinkActive="active"><mat-icon
+                fontIcon="priority_high"></mat-icon>Legal
+            Notice</mat-nav-item>
+        <mat-nav-item routerLink="/site/{{test}}/data-protection" routerLinkActive="active" class="mb-16"><mat-icon
+                fontIcon="security"></mat-icon>Data
+            Protection</mat-nav-item>
+
+    </div>
+</mat-nav-list>

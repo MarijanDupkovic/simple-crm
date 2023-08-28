@@ -1,0 +1,56 @@
+<mat-drawer-container class="mat-drawer-container" autosize>
+  <mat-drawer #sidenav class="sidenav" mode="side" [opened]='opened'>
+    <div class="logo-container">
+      <img src="./../../assets/img/header1.png" alt="">
+    </div>
+    <app-header-mobile></app-header-mobile>
+
+  </mat-drawer>
+  <div class="example-sidenav-content">
+    <mat-toolbar color="accent" class="tb-desktop">
+      <div class="tb-left">
+        <mat-icon *ngIf="opened" aria-hidden="false" class="menu-icon material-symbols-outlined"
+          aria-label="Example home icon" fontIcon="left_panel_close"
+          (click)="sidenav.toggle(); opened = false;"></mat-icon>
+        <mat-icon *ngIf="!opened" aria-hidden="false" class="menu-icon material-symbols-outlined"
+          aria-label="Example home icon" fontIcon="left_panel_open"
+          (click)="sidenav.toggle(); opened = true;"></mat-icon>
+        <span>Simple CRM</span>
+      </div>
+      <div class="pin-right-upper-corner">
+        <button mat-icon-button [matMenuTriggerFor]="mobileNav" *ngIf="!opened">
+          <mat-menu #mobileNav="matMenu">
+            <a mat-menu-item routerLink="/site/{{test}}/dashboard">Dashboard</a>
+            <a mat-menu-item routerLink="/site/{{test}}/customer">Customer</a>
+            <a mat-menu-item routerLink="/site/{{test}}/invoice">New Invoice</a>
+            <a mat-menu-item routerLink="/site/{{test}}/newsletter">Newsletter</a>
+            <a mat-menu-item routerLink="/site/{{test}}/user" *ngIf="test == 'BTDgZYSnadVxAQW5H5JqRYVV7Qk1'">User</a>
+            <a mat-menu-item routerLink="/site/{{test}}/legal-notice">Legal Notice</a>
+            <a mat-menu-item routerLink="/site/{{test}}/data-protection">Data Protection</a>
+          </mat-menu>
+          <mat-icon fontIcon="more_vert"></mat-icon>
+        </button>
+        <button mat-icon-button [matMenuTriggerFor]="userEditMenu" class="pos-right">
+          <mat-menu #userEditMenu="matMenu">
+
+            <button mat-menu-item (click)="sendResetPasswordMail()">Reset Password</button>
+            <button mat-menu-item (click)="logout()">Logout</button>
+          </mat-menu>
+          <mat-icon fontIcon="settings"></mat-icon>
+        </button>
+      </div>
+    </mat-toolbar>
+    <div class="router-container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <div class="success-dialog" *ngIf="dialog">
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+    <div mat-dialog-content>
+      Reset-Mail successfully send to {{ userMail }}
+    </div>
+    <div mat-dialog-actions>
+      <button [disabled]="loading" mat-button (click)="close()" cdkFocusInitial>OK</button>
+    </div>
+  </div>
+</mat-drawer-container>

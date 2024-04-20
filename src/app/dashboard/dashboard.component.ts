@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import * as Highcharts from 'highcharts';
 import { WebsiteComponent } from '../website/website.component';
@@ -17,7 +17,7 @@ HighchartsExportData(Highcharts);
   standalone: true,
   imports: [HighchartsChartModule, CommonModule]
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements AfterViewInit {
   Highcharts: typeof Highcharts = Highcharts;
   updateFlag = false;
   data_sales: any = [];
@@ -35,11 +35,11 @@ export class DashboardComponent implements OnInit {
   activated: boolean = false;
   message: any = '';
   parser = new DOMParser();
-  ngOnInit() {
+  ngAfterViewInit() {
     this.firestore.collection('customer')
       .valueChanges({ idField: 'customIdName' })
       .subscribe((changes: any) => this.initDashboard(changes));
-      
+
     this.firestore.collection('newsletter').valueChanges({ idField: 'customIdName' })
     .subscribe((changes: any) => this.initNewsletter(changes));
   }
@@ -58,7 +58,7 @@ export class DashboardComponent implements OnInit {
       testime = testime.split(' ');
       testime = testime[0] + ' ' + testime[1].replace(8, 'August') + ' ' +testime[2];
       testime = new Date(testime).getTime();
-      
+
       if ( testime > lastNewsletter) {
         lastNewsletter = testime;
         this.lastNewsletterSend = n;

@@ -23,6 +23,17 @@
             "polyfills": [
               "zone.js"
             ],
+            "allowedCommonJsDependencies": [
+              "highcharts/highcharts-more",
+              "highcharts/modules/accessibility",
+              "highcharts/modules/exporting",
+              "highcharts/modules/export-data",
+              "highcharts/modules/boost",
+              "pdfmake/build/pdfmake",
+              "pdfmake/build/vfs_fonts",
+              "pdfmake",
+              "highcharts"
+            ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
